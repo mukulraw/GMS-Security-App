@@ -3,136 +3,185 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.gms.gmsapp.Login">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center_horizontal"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/sites"
-            android:layout_gravity="center_horizontal"
-            />
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/guardit" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Guard"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IT"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Guard"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" Information Tracking"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Guard"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textStyle="bold"
                 android:textColor="#000000"
-                android:textSize="20sp"
+                android:text="Security Operation Management Tool"
+                android:textSize="10sp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
                 />
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Information Tracking"
+                android:textColor="#000000"
+                android:text="Powered by World Security"
+                android:textSize="10sp"
                 android:textStyle="bold"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:textColor="@color/colorAccent"
-                android:textSize="20sp"
+                android:paddingBottom="5dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
                 />
 
 
 
         </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
-        android:orientation="vertical"
-        >
-
-
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="18dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="30dp"
-            android:hint="Enter Username"
-            android:drawableStart="@drawable/user"
-            android:drawableLeft="@drawable/user"
-            android:drawablePadding="18dp"
-            android:layout_marginBottom="10dp"
-            android:textColorHint="#ffffff"
-            android:background="@drawable/edit_round"
-            />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="18dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:hint="Enter Password"
-            android:drawableStart="@drawable/pass"
-            android:drawableLeft="@drawable/pass"
-            android:drawablePadding="18dp"
-            android:textColorHint="#ffffff"
-            android:background="@drawable/edit_round"
-            />
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:paddingEnd="10dp"
-            android:paddingRight="10dp"
-            android:paddingStart="10dp"
-            android:paddingLeft="10dp"
-            android:paddingBottom="18dp"
-            android:paddingTop="18dp"
-            android:text="forgot password ?"
-            android:textColor="#ffffff"
-            />
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit_round"
+                android:drawableLeft="@drawable/user"
+                android:drawablePadding="18dp"
+                android:drawableStart="@drawable/user"
+                android:hint="Enter Username"
+                android:inputType="textPersonName"
+                android:padding="18dp"
+                android:textColorHint="#ffffff" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_round"
+                android:drawableLeft="@drawable/pass"
+                android:drawablePadding="18dp"
+                android:drawableStart="@drawable/pass"
+                android:hint="Enter Password"
+                android:inputType="textPassword"
+                android:padding="18dp"
+                android:textColorHint="#ffffff" />
 
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/forgot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:paddingBottom="18dp"
+                android:paddingEnd="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingStart="10dp"
+                android:paddingTop="18dp"
+                android:text="forgot password ?"
+                android:textColor="#ffffff" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
         android:layout_alignParentBottom="true"
         android:background="#66000000"
-        android:textColor="#ffffff"
         android:focusable="true"
-        android:id="@+id/login"
-        android:text="LOGIN"
         android:gravity="center"
-        android:textSize="20sp"
+        android:padding="20dp"
+        android:text="LOGIN"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/progress"
+        android:visibility="gone"
         />
 
 </RelativeLayout>

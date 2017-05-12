@@ -4,13 +4,16 @@
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/drawer"
     tools:context="com.gms.gmsapp.HomeScreen"
     tools:openDrawer="start">
 
 
 
 
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/map"
@@ -19,7 +22,15 @@
         android:layout_height="match_parent"
         tools:context="com.gms.gmsapp.HomeScreen" />
 
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="#00000000"
+            android:id="@+id/toolbar"
+            />
 
+    </RelativeLayout>
 
 
     <include
