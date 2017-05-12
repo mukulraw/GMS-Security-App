@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:focusable="true"
+    >
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Home"
+        android:drawableStart="@drawable/home"
+        android:drawableLeft="@drawable/home"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="My Profile"
+        android:drawableStart="@drawable/profile"
+        android:drawableLeft="@drawable/profile"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="My Sites"
+        android:drawableStart="@drawable/site"
+        android:drawableLeft="@drawable/site"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="View Schedule"
+        android:drawableStart="@drawable/schedule"
+        android:drawableLeft="@drawable/schedule"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="View T &amp; A (Time &amp; Attendance)"
+        android:drawableStart="@drawable/attendance"
+        android:drawableLeft="@drawable/attendance"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="View Incidents"
+        android:drawableStart="@drawable/incident"
+        android:drawableLeft="@drawable/incident"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Support"
+        android:drawableStart="@drawable/support"
+        android:drawableLeft="@drawable/support"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Info"
+        android:drawableStart="@drawable/info"
+        android:drawableLeft="@drawable/info"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Settings"
+        android:drawableStart="@drawable/setting"
+        android:drawableLeft="@drawable/setting"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ffffff"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Log Out"
+        android:drawableStart="@drawable/logout"
+        android:drawableLeft="@drawable/logout"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:textSize="18sp"
+        android:textColor="#ffffff"
+        />
+
+</LinearLayout>
