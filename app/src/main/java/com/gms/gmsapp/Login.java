@@ -61,7 +61,7 @@ public class Login extends AppCompatActivity {
                         dialog.show();
 
                         Retrofit retrofit = new Retrofit.Builder()
-                                .baseUrl("http://nationproducts.in/")
+                                .baseUrl("http://115.118.242.137:5000/")
                                 .addConverterFactory(ScalarsConverterFactory.create())
                                 .addConverterFactory(GsonConverterFactory.create())
                                 .build();

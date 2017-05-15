@@ -2,10 +2,16 @@ package com.gms.gmsapp;
 
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -14,23 +20,134 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class HomeScreen extends AppCompatActivity implements OnMapReadyCallback {
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.converter.scalars.ScalarsConverterFactory;
 
-    private GoogleMap mMap;
+public class HomeScreen extends AppCompatActivity {
+
+
     Toolbar toolbar;
     DrawerLayout drawer;
+    LinearLayout linear;
+    TextView home , profile , sites , schedules , tna , incidents , support , info , settings , logout;
+
+    ProgressBar progress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+
+
+        linear = (LinearLayout)findViewById(R.id.linear);
+
+        progress = (ProgressBar)findViewById(R.id.progress);
+
+        home = (TextView)findViewById(R.id.home);
+        profile = (TextView)findViewById(R.id.profile);
+        sites = (TextView)findViewById(R.id.sites);
+        schedules = (TextView)findViewById(R.id.schedule);
+        tna = (TextView)findViewById(R.id.tna);
+        incidents = (TextView)findViewById(R.id.incidents);
+        support = (TextView)findViewById(R.id.support);
+        info = (TextView)findViewById(R.id.info);
+        settings = (TextView)findViewById(R.id.settings);
+        logout = (TextView)findViewById(R.id.log);
+
+
+
+        bean b = (bean)getApplicationContext();
+
+        linear.setVisibility(View.GONE);
+        progress.setVisibility(View.VISIBLE);
+
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://115.118.242.137:5000/")
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        AllAPIs cr = retrofit.create(AllAPIs.class);
+
+        Call<menuBean> call = cr.getMenu(b.user);
+
+
+        call.enqueue(new Callback<menuBean>() {
+            @Override
+            public void onResponse(Call<menuBean> call, Response<menuBean> response) {
+
+
+                if (response.body().getDashboard() == "on")
+                {
+                    home.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    home.setVisibility(View.GONE);
+                }
+
+                if (response.body().getContract() == "on")
+                {
+                    sites.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    sites.setVisibility(View.GONE);
+                }
+
+                if (response.body().getTna() == "on")
+                {
+                    tna.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    tna.setVisibility(View.GONE);
+                }
+
+
+                if (response.body().getIncident() == "on")
+                {
+                    incidents.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    incidents.setVisibility(View.GONE);
+                }
+
+
+                if (response.body().getSupport() == "on")
+                {
+                     support.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    support.setVisibility(View.GONE);
+                }
+
+
+                linear.setVisibility(View.VISIBLE);
+                progress.setVisibility(View.GONE);
+
+
+            }
+
+            @Override
+            public void onFailure(Call<menuBean> call, Throwable t) {
+
+            }
+        });
+
+
+
 
 
         toolbar = (Toolbar)findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -41,6 +158,15 @@ public class HomeScreen extends AppCompatActivity implements OnMapReadyCallback 
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+
+        MapScreen frag = new MapScreen();
+
+        transaction.replace(R.id.layout_to_hide , frag);
+        //transaction.addToBackStack(null);
+        transaction.commit();
 
 
 
@@ -56,13 +182,5 @@ public class HomeScreen extends AppCompatActivity implements OnMapReadyCallback 
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-    }
 }
