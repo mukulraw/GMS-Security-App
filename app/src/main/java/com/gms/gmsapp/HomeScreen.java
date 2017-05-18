@@ -4,10 +4,12 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -19,6 +21,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -81,8 +85,9 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onResponse(Call<menuBean> call, Response<menuBean> response) {
 
+                Log.d("asdasd" , response.body().getDashboard());
 
-                if (response.body().getDashboard() == "on")
+                if (Objects.equals(response.body().getDashboard(), "on"))
                 {
                     home.setVisibility(View.VISIBLE);
                 }
@@ -91,7 +96,7 @@ public class HomeScreen extends AppCompatActivity {
                     home.setVisibility(View.GONE);
                 }
 
-                if (response.body().getContract() == "on")
+                if (Objects.equals(response.body().getContract(), "on"))
                 {
                     sites.setVisibility(View.VISIBLE);
                 }
@@ -100,7 +105,7 @@ public class HomeScreen extends AppCompatActivity {
                     sites.setVisibility(View.GONE);
                 }
 
-                if (response.body().getTna() == "on")
+                if (Objects.equals(response.body().getTna(), "on"))
                 {
                     tna.setVisibility(View.VISIBLE);
                 }
@@ -110,7 +115,7 @@ public class HomeScreen extends AppCompatActivity {
                 }
 
 
-                if (response.body().getIncident() == "on")
+                if (Objects.equals(response.body().getIncident(), "on"))
                 {
                     incidents.setVisibility(View.VISIBLE);
                 }
@@ -120,7 +125,7 @@ public class HomeScreen extends AppCompatActivity {
                 }
 
 
-                if (response.body().getSupport() == "on")
+                if (Objects.equals(response.body().getSupport(), "on"))
                 {
                      support.setVisibility(View.VISIBLE);
                 }
@@ -144,6 +149,42 @@ public class HomeScreen extends AppCompatActivity {
 
 
 
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                MapScreen frag1 = new MapScreen();
+
+                ft.replace(R.id.layout_to_hide , frag1);
+                ft.commit();
+
+                drawer.closeDrawer(GravityCompat.START);
+
+
+            }
+        });
+
+
+        sites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                Sites frag1 = new Sites();
+
+                ft.replace(R.id.layout_to_hide , frag1);
+                ft.commit();
+
+                drawer.closeDrawer(GravityCompat.START);
+
+
+            }
+        });
 
 
         toolbar = (Toolbar)findViewById(R.id.toolbar);
