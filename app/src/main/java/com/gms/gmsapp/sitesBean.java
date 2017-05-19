@@ -41,5 +41,4 @@ public class sitesBean {
     public void setShiftDetail(List<String> shiftDetail) {
         this.shiftDetail = shiftDetail;
     }
-
 }

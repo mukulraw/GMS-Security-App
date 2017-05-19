@@ -1,6 +1,8 @@
 package com.gms.gmsapp;
 
 
+import com.gms.gmsapp.getPOJO.geoBean;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -31,6 +33,35 @@ public interface AllAPIs {
     @GET("GuardIT-RWS/rest/myresource/noOfSites")
     Call<List<sitesBean>> getSites(
             @Query("email_id") String email_id
+    );
+
+    @GET("GuardIT-RWS/rest/myresource/getgeoFences")
+    Call<geoBean> getGeo(
+            @Query("site_id") String siteId
+    );
+
+    @GET("GuardIT-RWS/rest/myresource/getsiteAddress")
+    Call<contactBean> getContact(
+            @Query("site_id") String siteId
+    );
+
+    @GET("GuardIT-RWS/rest/myresource/getticketList")
+    Call<List<supportListBean>> getSupport(
+            @Query("email_id") String email_id
+    );
+
+    @GET("GuardIT-RWS/rest/myresource/getticketDetail")
+    Call<List<chatBean>> getChats(
+            @Query("ticket_id") String ticketId
+    );
+
+
+    @GET("GuardIT-RWS/rest/myresource/replyticket")
+    Call<Integer> sendMessage(
+            @Query("email_id") String email_id,
+            @Query("ticket_id") String tId,
+            @Query("content") String content,
+            @Query("date") String date
     );
 
 

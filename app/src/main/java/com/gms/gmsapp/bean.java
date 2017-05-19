@@ -5,6 +5,6 @@ import android.app.Application;
 
 public class bean extends Application{
 
-    String user = "DEWA-TEST";
+    String user = "";
 
 }

@@ -6,12 +6,15 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.Spinner;
 
@@ -29,8 +32,6 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class Sites extends Fragment {
 
     Spinner spinner;
-    TabLayout tabs;
-    ViewPager pager;
     String id;
 
     List<String> sites;
@@ -45,12 +46,8 @@ public class Sites extends Fragment {
         sitesId = new ArrayList<>();
 
         spinner = (Spinner)view.findViewById(R.id.spinner);
-        tabs = (TabLayout)view.findViewById(R.id.tabs);
-        pager = (ViewPager)view.findViewById(R.id.pager);
 
-        tabs.addTab(tabs.newTab().setText("Geofence").setIcon(R.drawable.geo));
-        tabs.addTab(tabs.newTab().setText("Address").setIcon(R.drawable.home));
-        tabs.addTab(tabs.newTab().setText("Schedule").setIcon(R.drawable.events));
+
 
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -64,10 +61,6 @@ public class Sites extends Fragment {
         bean b = (bean)getContext().getApplicationContext();
 
         Call<List<sitesBean>> call = cr.getSites(b.user);
-
-        PagerAdapter adapter1 = new PagerAdapter(getChildFragmentManager());
-
-        pager.setAdapter(adapter1);
 
         call.enqueue(new Callback<List<sitesBean>>() {
             @Override
@@ -96,7 +89,18 @@ public class Sites extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+                FragmentTransaction ft = getChildFragmentManager().beginTransaction();
 
+                SiteFrag frag = new SiteFrag();
+
+                Bundle b = new Bundle();
+
+                b.putString("id" , sitesId.get(position));
+
+                frag.setArguments(b);
+
+                ft.replace(R.id.layout_to_replace , frag);
+                ft.commit();
 
             }
 
@@ -113,48 +117,6 @@ public class Sites extends Fragment {
         return view;
     }
 
-    class PagerAdapter extends FragmentStatePagerAdapter
-    {
 
-
-        public PagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            if (position == 0)
-            {
-                return new Geo();
-            }
-            else if (position == 1)
-            {
-                return new Address();
-            }
-            else if (position == 2)
-            {
-                return new Address();
-            }
-            return null;
-        }
-
-        @Override
-        public int getCount() {
-            return 3;
-        }
-    }
-
-
-    public static class Address extends Fragment
-    {
-
-        @Nullable
-        @Override
-        public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.address , container , false);
-
-            return view;
-        }
-    }
 
 }

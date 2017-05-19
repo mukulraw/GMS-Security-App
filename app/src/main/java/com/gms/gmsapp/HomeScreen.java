@@ -168,6 +168,23 @@ public class HomeScreen extends AppCompatActivity {
         });
 
 
+        support.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                Support frag1 = new Support();
+
+                ft.replace(R.id.layout_to_hide , frag1);
+                ft.commit();
+
+                drawer.closeDrawer(GravityCompat.START);
+
+            }
+        });
+
+
         sites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

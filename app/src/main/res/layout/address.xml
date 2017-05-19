@@ -1,6 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Site Code"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingBottom="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:id="@+id/site_code"
+        android:text="site_code"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Site Namee"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingBottom="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:id="@+id/site_name"
+        android:text="site_name"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Site Address"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingBottom="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:id="@+id/site_add"
+        android:text="site_add"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Site Person"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingBottom="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:id="@+id/site_person"
+        android:text="site_person"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingBottom="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:id="@+id/site_contact"
+        android:text="site_contact"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingBottom="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:id="@+id/site_email"
+        android:text="site_email"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Designation"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingTop="5dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingBottom="5dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/text_back"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/site_desig"
+        android:text="site_desig"
+        />
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>
