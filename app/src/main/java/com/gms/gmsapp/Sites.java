@@ -1,5 +1,7 @@
 package com.gms.gmsapp;
 
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -9,6 +11,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.AppCompatSpinner;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +34,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class Sites extends Fragment {
 
-    Spinner spinner;
+    AppCompatSpinner spinner;
     String id;
 
     List<String> sites;
@@ -45,8 +48,9 @@ public class Sites extends Fragment {
         sites = new ArrayList<>();
         sitesId = new ArrayList<>();
 
-        spinner = (Spinner)view.findViewById(R.id.spinner);
+        spinner = (AppCompatSpinner)view.findViewById(R.id.spinner);
 
+        spinner.getBackground().setColorFilter(Color.parseColor("#02b0f0"), PorterDuff.Mode.SRC_ATOP);
 
 
 
@@ -72,7 +76,7 @@ public class Sites extends Fragment {
                     sitesId.add(response.body().get(i).getSiteId());
                 }
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item,sites);
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), R.layout.spinner_model , sites);
 
                 spinner.setAdapter(adapter);
 

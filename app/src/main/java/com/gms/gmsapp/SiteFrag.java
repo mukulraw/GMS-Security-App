@@ -38,7 +38,7 @@ public class SiteFrag extends Fragment {
         id = getArguments().getString("id");
 
         tabs.addTab(tabs.newTab().setText("Geofence").setIcon(R.drawable.geo));
-        tabs.addTab(tabs.newTab().setText("Address").setIcon(R.drawable.home));
+        tabs.addTab(tabs.newTab().setText("Address").setIcon(R.drawable.home2));
         tabs.addTab(tabs.newTab().setText("Schedule").setIcon(R.drawable.events));
 
 
@@ -47,6 +47,12 @@ public class SiteFrag extends Fragment {
         pager.setAdapter(adapter1);
 
         tabs.setupWithViewPager(pager);
+
+        tabs.getTabAt(0).setText("Geofence").setIcon(R.drawable.geo);
+        tabs.getTabAt(1).setText("Address").setIcon(R.drawable.home2);
+        tabs.getTabAt(2).setText("Schedule").setIcon(R.drawable.events);
+
+
 
         return view;
     }

@@ -77,7 +77,7 @@ public class TicketChat extends AppCompatActivity {
         adapter = new ChatAdapter(TicketChat.this , list , R.layout.chat_model);
 
         grid.setAdapter(adapter);
-
+        grid.setDividerHeight(0);
 
         progress.setVisibility(View.VISIBLE);
 
