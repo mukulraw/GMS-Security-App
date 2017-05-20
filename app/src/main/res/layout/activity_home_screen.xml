@@ -11,10 +11,46 @@
 
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
 
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="#00000000"
+            android:id="@+id/toolbar"
+            >
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/wslogo"
+                    />
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#79a9b3" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,28 +59,16 @@
             android:id="@+id/layout_to_hide"
             />
 
+    </LinearLayout>
 
 
-
-
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:background="#00000000"
-            android:id="@+id/toolbar"
-            />
-
-    </RelativeLayout>
-
-
-    <include
+    <!--<include
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
         layout="@layout/drawer_menu"
         android:layout_gravity="start"
         />
-
+-->
 
 
 </android.support.v4.widget.DrawerLayout>

@@ -216,6 +216,7 @@ public class HomeScreen extends AppCompatActivity {
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+        toolbar.setLogo(R.drawable.guardit);
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
