@@ -64,5 +64,9 @@ public interface AllAPIs {
             @Query("date") String date
     );
 
+    @GET("GuardIT-RWS/rest/myresource/customerDetails")
+    Call<profileBean> getProfile(
+            @Query("email_id") String email_id
+    );
 
 }

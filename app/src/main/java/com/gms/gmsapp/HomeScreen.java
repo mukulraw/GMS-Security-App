@@ -167,6 +167,23 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
 
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                Profile frag1 = new Profile();
+
+                ft.replace(R.id.layout_to_hide , frag1);
+                ft.commit();
+
+                drawer.closeDrawer(GravityCompat.START);
+
+
+            }
+        });
 
         support.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -217,6 +234,7 @@ public class HomeScreen extends AppCompatActivity {
         toggle.syncState();
 
         toolbar.setLogo(R.drawable.guardit);
+
 
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
