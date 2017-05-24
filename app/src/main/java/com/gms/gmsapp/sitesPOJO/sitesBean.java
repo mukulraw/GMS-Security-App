@@ -1,5 +1,4 @@
-package com.gms.gmsapp;
-
+package com.gms.gmsapp.sitesPOJO;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -16,7 +15,7 @@ public class sitesBean {
     private String siteName;
     @SerializedName("shift_detail")
     @Expose
-    private List<String> shiftDetail = null;
+    private List<ShiftDetail> shiftDetail = null;
 
     public String getSiteId() {
         return siteId;
@@ -34,11 +33,12 @@ public class sitesBean {
         this.siteName = siteName;
     }
 
-    public List<String> getShiftDetail() {
+    public List<ShiftDetail> getShiftDetail() {
         return shiftDetail;
     }
 
-    public void setShiftDetail(List<String> shiftDetail) {
+    public void setShiftDetail(List<ShiftDetail> shiftDetail) {
         this.shiftDetail = shiftDetail;
     }
+
 }

@@ -74,19 +74,6 @@
         android:background="#ffffff"
         />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:text="View Schedule"
-        android:id="@+id/schedule"
-        android:drawableStart="@drawable/schedule"
-        android:drawableLeft="@drawable/schedule"
-        android:drawablePadding="10dp"
-        android:gravity="center_vertical"
-        android:textSize="18sp"
-        android:textColor="#ffffff"
-        />
 
     <TextView
         android:layout_width="match_parent"
@@ -99,7 +86,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:id="@+id/tna"
-        android:text="View T &amp; A (Time &amp; Attendance)"
+        android:text="View Schedule/ T&amp;A"
         android:drawableStart="@drawable/attendance"
         android:drawableLeft="@drawable/attendance"
         android:drawablePadding="10dp"

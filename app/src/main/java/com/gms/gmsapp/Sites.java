@@ -21,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.Spinner;
 
+import com.gms.gmsapp.sitesPOJO.sitesBean;
+
 import java.util.ArrayList;
 import java.util.List;
 

@@ -37,7 +37,7 @@ public class HomeScreen extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawer;
     LinearLayout linear;
-    TextView home , profile , sites , schedules , tna , incidents , support , info , settings , logout;
+    TextView home , profile , sites , tna , incidents , support , info , settings , logout;
 
     ProgressBar progress;
 
@@ -55,7 +55,7 @@ public class HomeScreen extends AppCompatActivity {
         home = (TextView)findViewById(R.id.home);
         profile = (TextView)findViewById(R.id.profile);
         sites = (TextView)findViewById(R.id.sites);
-        schedules = (TextView)findViewById(R.id.schedule);
+
         tna = (TextView)findViewById(R.id.tna);
         incidents = (TextView)findViewById(R.id.incidents);
         support = (TextView)findViewById(R.id.support);
@@ -210,6 +210,24 @@ public class HomeScreen extends AppCompatActivity {
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
                 Sites frag1 = new Sites();
+
+                ft.replace(R.id.layout_to_hide , frag1);
+                ft.commit();
+
+                drawer.closeDrawer(GravityCompat.START);
+
+
+            }
+        });
+
+        tna.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                Schedule frag1 = new Schedule();
 
                 ft.replace(R.id.layout_to_hide , frag1);
                 ft.commit();

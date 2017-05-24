@@ -2,6 +2,8 @@ package com.gms.gmsapp;
 
 
 import com.gms.gmsapp.getPOJO.geoBean;
+import com.gms.gmsapp.schedulePOJO.scheduleBean;
+import com.gms.gmsapp.sitesPOJO.sitesBean;
 
 import java.util.List;
 
@@ -68,5 +70,12 @@ public interface AllAPIs {
     Call<profileBean> getProfile(
             @Query("email_id") String email_id
     );
+
+    @GET("GuardIT-RWS/rest/myresource/viewshiftSchedule")
+    Call<scheduleBean> getSchedule(
+            @Query("shift_id") String shift_id,
+            @Query("date") String date
+    );
+
 
 }
