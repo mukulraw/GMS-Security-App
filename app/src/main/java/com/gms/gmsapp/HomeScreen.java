@@ -37,7 +37,7 @@ public class HomeScreen extends AppCompatActivity {
     Toolbar toolbar;
     DrawerLayout drawer;
     LinearLayout linear;
-    TextView home , profile , sites , tna , incidents , support , info , settings , logout;
+    TextView home , profile , sites , tna , incidents , support , info , settings , logout , title;
 
     ProgressBar progress;
 
@@ -62,6 +62,7 @@ public class HomeScreen extends AppCompatActivity {
         info = (TextView)findViewById(R.id.info);
         settings = (TextView)findViewById(R.id.settings);
         logout = (TextView)findViewById(R.id.log);
+        title = (TextView)findViewById(R.id.title);
 
 
 
@@ -161,6 +162,8 @@ public class HomeScreen extends AppCompatActivity {
                 ft.replace(R.id.layout_to_hide , frag1);
                 ft.commit();
 
+                title.setText("home");
+
                 drawer.closeDrawer(GravityCompat.START);
 
 
@@ -178,6 +181,8 @@ public class HomeScreen extends AppCompatActivity {
 
                 ft.replace(R.id.layout_to_hide , frag1);
                 ft.commit();
+
+                title.setText("my profile");
 
                 drawer.closeDrawer(GravityCompat.START);
 
@@ -213,6 +218,8 @@ public class HomeScreen extends AppCompatActivity {
 
                 ft.replace(R.id.layout_to_hide , frag1);
                 ft.commit();
+                title.setText("my sites");
+
 
                 drawer.closeDrawer(GravityCompat.START);
 
@@ -239,6 +246,27 @@ public class HomeScreen extends AppCompatActivity {
         });
 
 
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                Info frag1 = new Info();
+
+                ft.replace(R.id.layout_to_hide , frag1);
+                ft.commit();
+
+                title.setText("about");
+
+                drawer.closeDrawer(GravityCompat.START);
+
+
+            }
+        });
+
+
         toolbar = (Toolbar)findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
@@ -251,7 +279,7 @@ public class HomeScreen extends AppCompatActivity {
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        toolbar.setLogo(R.drawable.guardit);
+        //toolbar.setLogo(R.drawable.guardit);
 
 
         FragmentManager manager = getSupportFragmentManager();

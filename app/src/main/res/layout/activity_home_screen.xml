@@ -30,6 +30,29 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/guardit"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/title"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:textAllCaps="true"
+                    />
+
                 <ImageView
                     android:layout_width="?attr/actionBarSize"
                     android:layout_height="?attr/actionBarSize"
@@ -41,6 +64,8 @@
                     android:layout_centerVertical="true"
                     android:src="@drawable/wslogo"
                     />
+
+
 
             </RelativeLayout>
 
@@ -61,6 +86,7 @@
 
     </LinearLayout>
 
+<!--
 
     <include
         android:layout_height="match_parent"
@@ -68,6 +94,7 @@
         layout="@layout/drawer_menu"
         android:layout_gravity="start"
         />
+-->
 
 
 </android.support.v4.widget.DrawerLayout>
