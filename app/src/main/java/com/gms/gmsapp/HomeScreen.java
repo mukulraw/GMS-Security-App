@@ -65,17 +65,18 @@ public class HomeScreen extends AppCompatActivity {
 
 
 
-        bean b = (bean)getApplicationContext();
+
 
         linear.setVisibility(View.GONE);
         progress.setVisibility(View.VISIBLE);
 
+        bean b = (bean)getApplicationContext();
+
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://115.118.242.137:5000/")
+                .baseUrl("http://" + b.baseURL + ":5000/")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
         AllAPIs cr = retrofit.create(AllAPIs.class);
 
         Call<menuBean> call = cr.getMenu(b.user);
@@ -85,7 +86,6 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onResponse(Call<menuBean> call, Response<menuBean> response) {
 
-                Log.d("asdasd" , response.body().getDashboard());
 
                 if (Objects.equals(response.body().getDashboard(), "on"))
                 {

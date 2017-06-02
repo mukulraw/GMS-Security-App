@@ -60,8 +60,10 @@ public class Login extends AppCompatActivity {
                         //progress.setVisibility(View.VISIBLE);
                         dialog.show();
 
+                        bean b = (bean)getApplicationContext();
+
                         Retrofit retrofit = new Retrofit.Builder()
-                                .baseUrl("http://115.118.242.137:5000/")
+                                .baseUrl("http://" + b.baseURL + ":5000/")
                                 .addConverterFactory(ScalarsConverterFactory.create())
                                 .addConverterFactory(GsonConverterFactory.create())
                                 .build();

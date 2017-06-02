@@ -7,4 +7,9 @@ public class bean extends Application{
 
     String user = "";
 
+
+    String baseURL = "";
+
+
+
 }

@@ -157,8 +157,10 @@ public class SiteFrag extends Fragment {
 
             progress.setVisibility(View.VISIBLE);
 
+            bean b = (bean)getContext().getApplicationContext();
+
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://115.118.242.137:5000/")
+                    .baseUrl("http://" + b.baseURL + ":5000/")
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
@@ -240,15 +242,17 @@ public class SiteFrag extends Fragment {
 
             progress.setVisibility(View.VISIBLE);
 
+            bean b = (bean)getContext().getApplicationContext();
+
             Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl("http://115.118.242.137:5000/")
+                    .baseUrl("http://" + b.baseURL + ":5000/")
                     .addConverterFactory(ScalarsConverterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
 
             final AllAPIs cr = retrofit.create(AllAPIs.class);
 
-            bean b = (bean)getContext().getApplicationContext();
+
 
             Call<List<sitesBean>> call = cr.getSites(b.user);
 
