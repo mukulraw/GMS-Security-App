@@ -36,7 +36,6 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_alignParentStart="true"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginStart="10dp"
                     android:layout_marginBottom="2dp"
                     android:layout_marginTop="2dp"
                     android:layout_centerVertical="true"
@@ -86,7 +85,7 @@
 
     </LinearLayout>
 
-<!--
+
 
     <include
         android:layout_height="match_parent"
@@ -94,7 +93,7 @@
         layout="@layout/drawer_menu"
         android:layout_gravity="start"
         />
--->
+
 
 
 </android.support.v4.widget.DrawerLayout>

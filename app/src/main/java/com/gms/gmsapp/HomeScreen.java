@@ -94,7 +94,7 @@ public class HomeScreen extends AppCompatActivity {
                 }
                 else
                 {
-                    home.setVisibility(View.GONE);
+                    //home.setVisibility(View.GONE);
                 }
 
                 if (Objects.equals(response.body().getContract(), "on"))
@@ -149,6 +149,15 @@ public class HomeScreen extends AppCompatActivity {
         });
 
 
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+            }
+        });
+
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,6 +178,47 @@ public class HomeScreen extends AppCompatActivity {
 
             }
         });
+
+        incidents.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                Incident frag1 = new Incident();
+
+                ft.replace(R.id.layout_to_hide , frag1);
+                ft.commit();
+
+                title.setText("view incidents");
+
+                drawer.closeDrawer(GravityCompat.START);
+
+
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+                Settings frag1 = new Settings();
+
+                ft.replace(R.id.layout_to_hide , frag1);
+                ft.commit();
+
+                title.setText("Settings");
+
+                drawer.closeDrawer(GravityCompat.START);
+
+
+            }
+        });
+
 
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -200,6 +250,7 @@ public class HomeScreen extends AppCompatActivity {
 
                 ft.replace(R.id.layout_to_hide , frag1);
                 ft.commit();
+                title.setText("View support");
 
                 drawer.closeDrawer(GravityCompat.START);
 
@@ -238,6 +289,7 @@ public class HomeScreen extends AppCompatActivity {
 
                 ft.replace(R.id.layout_to_hide , frag1);
                 ft.commit();
+                title.setText("view schedule/ t&a");
 
                 drawer.closeDrawer(GravityCompat.START);
 

@@ -34,7 +34,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rect_gray_border"
                 android:hint="Enter IP"
-                android:inputType="numberDecimal"
+
                 android:padding="5dp" />
 
 

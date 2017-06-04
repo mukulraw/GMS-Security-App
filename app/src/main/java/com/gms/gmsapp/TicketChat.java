@@ -82,7 +82,7 @@ public class TicketChat extends AppCompatActivity {
         progress.setVisibility(View.VISIBLE);
 
 
-        bean b = (bean)getApplicationContext();
+        final bean b = (bean)getApplicationContext();
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://" + b.baseURL + ":5000/")
@@ -124,7 +124,7 @@ public class TicketChat extends AppCompatActivity {
             public void run() {
 
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://115.118.242.137:5000/")
+                        .baseUrl("http://" + b.baseURL + ":5000/")
                         .addConverterFactory(ScalarsConverterFactory.create())
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
@@ -172,7 +172,7 @@ public class TicketChat extends AppCompatActivity {
                 if (conte.length()>0)
                 {
                     Retrofit retrofit = new Retrofit.Builder()
-                            .baseUrl("http://115.118.242.137:5000/")
+                            .baseUrl("http://" + b.baseURL + ":5000/")
                             .addConverterFactory(ScalarsConverterFactory.create())
                             .addConverterFactory(GsonConverterFactory.create())
                             .build();

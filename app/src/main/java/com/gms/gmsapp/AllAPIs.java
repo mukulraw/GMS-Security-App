@@ -77,5 +77,12 @@ public interface AllAPIs {
             @Query("date") String date
     );
 
+    @GET("GuardIT-RWS/rest/myresource/changePassword")
+    Call<Integer> changePassword(
+            @Query("email_id") String email_id,
+            @Query("curr_pass") String tId,
+            @Query("new_pass") String content,
+            @Query("conf_pass") String date
+    );
 
 }
